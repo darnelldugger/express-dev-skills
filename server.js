@@ -6,7 +6,7 @@ import logger from 'morgan'
 
 // import routers
 import { router as indexRouter } from './routes/index.js'
-import { router as turtlesRouter } from './routes/turtles.js'
+import { router as restaurantsRouter } from './routes/restaurants.js'
 
 // set up app
 const app = express()
@@ -30,7 +30,7 @@ app.use(
 
 // mounted routers
 app.use('/', indexRouter)
-app.use('/turtles', turtlesRouter)
+app.use('/restaurants', restaurantsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

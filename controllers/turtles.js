@@ -1,4 +1,4 @@
-import * as turtlesDB from '../data/turtle-db'
+import * as restaurantDB from '../data/restaurant-db'
 
 
 function index(req, res) {

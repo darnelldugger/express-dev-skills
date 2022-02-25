@@ -32,10 +32,17 @@ function create(req, res) {
   })
 }
 
+function deleteRestaurant(req, res) {
+  restaurantDB.findByIdAndDelete(req.params.id, function(error, restaurant) {
+    res.redirect('/restaurants')
+  })
+}
+
 
 export {
   index,
   show,
   newRestaurant as new,
-  create
+  create,
+  deleteRestaurant as delete,
 }

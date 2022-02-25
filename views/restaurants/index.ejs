@@ -15,6 +15,13 @@
   <ul>
     <% restaurants.forEach(function(restaurants) { %>
       <li>
+        <form
+          action="/restaurants/<%= restaurants._id %>?_method=DELETE"
+          class="delete-form"
+          method="POST"  
+        >
+          <button type="submit">X</button>
+        </form>
         <a href="/restaurants/<%= restaurants._id %>"><%= restaurants.name %></a>
           -
           <%= restaurants.type %>

@@ -39,9 +39,21 @@ function create(restaurant, callback) {
   return callback(null, restaurant)
 }
 
+function findByIdAndDelete(id, callback) {
+  try { 
+    // Find the index based on the _id of the todo object
+    const idx = restaurants.findIndex(restaurant => restaurant._id == parseInt(id))
+    const deletedRestaurant = restaurants.splice(idx, 1)
+    if (!deletedRestaurant.length ) throw new Error ('No Restaurant was deleted')
+    return callback(null, deletedRestaurant[0])
+  } catch(error) {
+    return callback(error, null)
+  }
+}
 
 export { 
 	find,
   findById,
-  create
+  create,
+  findByIdAndDelete
 }

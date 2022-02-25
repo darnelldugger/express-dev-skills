@@ -11,6 +11,8 @@ router.get('/new', restaurantsCtrl.new)
 
 router.get('/:id', restaurantsCtrl.show)
 
+router.post('/', restaurantsCtrl.create)
+
 export {
   router
 }

@@ -25,8 +25,17 @@ function newRestaurant(req, res) {
 }
 
 
+function create(req, res) {
+  console.log(req.body)
+  restaurantDB.create(req.body, function(error, restaurant) {
+    res.redirect('/restaurants')
+  })
+}
+
+
 export {
   index,
   show,
   newRestaurant as new,
+  create
 }

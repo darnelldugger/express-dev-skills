@@ -32,9 +32,16 @@ const findById = (id, callback) =>{
   }
 }
 
+function create(restaurant, callback) {
+  restaurant._id =Date.now() % 1000000
+  restaurant.done = false
+  restaurants.push(restaurant)
+  return callback(null, restaurant)
+}
 
 
 export { 
 	find,
-  findById
+  findById,
+  create
 }

@@ -5,8 +5,8 @@ function index(req, res) {
   restaurantDB.find({}, function(error, restaurants) {
     res.render('restaurants/index', {
       restaurants: restaurants,
-      error: error
-      
+      error: error,
+      time: req.time,
     })
   })
 }
@@ -20,8 +20,13 @@ function show(req, res) {
   })
 }
 
+function newRestaurant(req, res) {
+  res.render('restaurants/new')
+}
+
 
 export {
   index,
-  show
+  show,
+  newRestaurant as new,
 }

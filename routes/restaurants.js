@@ -7,6 +7,8 @@ const router = Router()
 
 router.get('/', restaurantsCtrl.index)
 
+router.get('/new', restaurantsCtrl.new)
+
 router.get('/:id', restaurantsCtrl.show)
 
 export {

@@ -8,7 +8,7 @@
   <title>Restaurants</title>
 </head>
 <body>
-  <h1>Restaurants</h1>
+  <h1>Restaurants as of <%= time %></h1>
   <% if(error) { %>
     <h2><%= error %></h2>
   <% } %>
@@ -23,5 +23,6 @@
       </li>
     <% }) %>
   </ul>
+  <a href="/restaurants/new">Add Restaurant</a>
 </body>
 </html>

@@ -13,20 +13,20 @@
     <h2><%= error %></h2>
   <% } %>
   <ul>
-    <% restaurants.forEach(function(restaurants) { %>
+    <% restaurants.forEach(function(restaurant) { %>
       <li>
         <form
-          action="/restaurants/<%= restaurants._id %>?_method=DELETE"
+          action="/restaurants/<%= restaurant._id %>?_method=DELETE"
           class="delete-form"
           method="POST"  
         >
           <button type="submit">X</button>
         </form>
-        <a href="/restaurants/<%= restaurants._id %>"><%= restaurants.name %></a>
+        <a href="/restaurants/<%= restaurant._id %>"><%= restaurant.name %></a>
           -
-          <%= restaurants.type %>
+          <%= restaurant.type %>
           - 
-        <%= restaurants.done ? 'done' : 'not done' %>
+        <%= restaurant.done ? 'done' : 'not done' %>
       </li>
     <% }) %>
   </ul>

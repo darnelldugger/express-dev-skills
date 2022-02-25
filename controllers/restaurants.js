@@ -1,10 +1,15 @@
-import * as restaurantDB from '../data/restaurant-db'
+import * as restaurantDB from '../data/restaurant-db.js'
 
 
 function index(req, res) {
-  res.send('respond with a resource')
-  }
-
+  restaurantDB.find({}, function(error, restaurants) {
+    res.render('restaurants/index', {
+      restaurants: restaurants,
+      error: error
+      
+    })
+  })
+}
 
 export {
   index

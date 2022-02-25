@@ -1,18 +1,13 @@
 import { Router } from 'express'
-import * as restaurantDb from '../data/restaurant-db.js'
+import * as restaurantsCtrl from '../controllers/restaurants.js'
+import { app } from '../server.js'
 const router = Router()
 
 
 
-router.get('/', function(req, res) {
-  restaurantDb.find({}, function(error, restaurants) {
-    res.render('restaurants/index', {
-      restaurants: restaurants,
-      error: error
-      
-    })
-  })
-})
+router.get('/', restaurantsCtrl.index)
+
+
 
 export {
   router

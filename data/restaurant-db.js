@@ -21,6 +21,20 @@ const find = (conditions, callback) => {
   }
 }
 
+const findById = (id, callback) =>{
+  try {
+    const restaurant = restaurants.find(restaurant => restaurant._id === parseInt(id))
+    if (!restaurant) throw new Error ('No restaurant was found')
+    return callback(null, restaurant)
+  } catch (error) {
+    console.log(error)
+    return callback(error, null)
+  }
+}
+
+
+
 export { 
-	find
+	find,
+  findById
 }

@@ -5,23 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/style.css">
-  <title>Restaurants</title>
+  <title>Restaurant SignUp</title>
 </head>
 <body>
   <h1>Restaurants</h1>
   <% if(error) { %>
     <h2><%= error %></h2>
+  <% } else { %>
+    <h2>Restaurant #<%= restaurants._id %></h2>
+    <h3><%= restaurants.name %></h3>
+    <p>Complete: <%= restaurants.done ? 'Yes' : 'No' %></p>
   <% } %>
-  <ul>
-    <% restaurants.forEach(function(restaurants) { %>
-      <li>
-        <a href="/restaurants/<%= restaurants._id %>"><%= restaurants.name %></a>
-          -
-          <%= restaurants.type %>
-          - 
-        <%= restaurants.done ? 'done' : 'not done' %>
-      </li>
-    <% }) %>
-  </ul>
+	<a href="/restaurants">Go back</a>
 </body>
 </html>

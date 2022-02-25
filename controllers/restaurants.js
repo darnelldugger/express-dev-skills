@@ -11,6 +11,17 @@ function index(req, res) {
   })
 }
 
+function show(req, res) {
+  restaurantDB.findById(req.params.id, function(error, restaurant) {
+    res.render('restaurants/show', {
+      restaurants: restaurant,
+      error: error,
+    })
+  })
+}
+
+
 export {
-  index
+  index,
+  show
 }

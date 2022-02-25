@@ -1,10 +1,17 @@
 import { Router } from 'express'
-
+import * as restaurantDb from '../data/restaurant-db.js'
 const router = Router()
 
-/* GET users listing. */
+
+
 router.get('/', function(req, res) {
-  res.send('respond with a resource')
+  restaurantDb.find({}, function(error, restaurants) {
+    res.render('restaurants/index', {
+      restaurants: restaurants,
+      error: error
+      
+    })
+  })
 })
 
 export {

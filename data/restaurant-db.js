@@ -1,7 +1,7 @@
 const restaurants = [
-  {name: '45th Ave Seafood', type: 'Seafood'},
-  {name: 'Atl Fine Dining', type: 'Steakhouse'},
-  {name: 'Best Brunch', type: 'steakhouse'}
+  {name: '45th Ave Seafood', type: 'Seafood', done: true, _id: 234789},
+  {name: 'Atl Fine Dining', type: 'Steakhouse', done: false, _id: 987123},
+  {name: 'Best Brunch', type: 'steakhouse', done: false, _id: 456726}
 
 ]
 

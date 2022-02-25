@@ -12,7 +12,7 @@ a {
 
 a:hover {
   color: coral;
-  
+
 }
 
 .delete-form {
@@ -22,8 +22,11 @@ a:hover {
 	
 .delete-form button {
   color: red;
-  background-color: whitesmoke;
+  background-color: white;
   margin: .3rem;
+  border-radius: .3rem;
+  border-color: rgb(112, 182, 8);
+  border-style: solid;
 }
 	
 li {
